@@ -60,6 +60,6 @@ if __name__ == "__main__":
                     audio = r.listen(source)
                     command = r.recognize_google(audio)
 
-                    processCommand(c)
+                    processCommand(command)
         except Exception as e:
             print("Error; {0}".format(e))
