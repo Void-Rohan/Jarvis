@@ -20,7 +20,7 @@ def processCommand(c):
     elif "open insta" in c.lower():
         webbrowser.open("https://instagram.com")
     elif "open youtube" in c.lower():
-        webbrowser.open("https://instagram.com")
+        webbrowser.open("https://youtube.com")
     elif "open gmail" in c.lower():
         webbrowser.open("https://gmail.com")
     elif "open discord" in c.lower():
@@ -35,15 +35,14 @@ def processCommand(c):
         webbrowser.open("https://chatgpt.com")
     elif c.lower().startswith("play"):
         song = c.lower().split(" ")[1]
-        musicLibrary.music(song)
+        link = musicLibrary.music[song]
+        webbrowser.open(link)
 
 if __name__ == "__main__":
     speak("Initializing Jarvis...")
     while True:
-
         # obtain audio from the microphone
         r = sr.Recognizer()
-
         # recognize speech using google
         print("Recognizing...")
         try:
